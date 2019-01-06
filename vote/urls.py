@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^api/projects/$', views.ProjectList.as_view()),
     url(r'^project/(\d+)/review_design/$', views.add_design, name='add_design'),
     url(r'^project/(\d+)/review_usability/$', views.add_usability, name='review_usability'),
-   url(r'^project/(\d+)/review_content/$', views.add_content, name='review_content'),
+    url(r'^project/(\d+)/review_content/$', views.add_content, name='review_content'),
 
 
 ]
