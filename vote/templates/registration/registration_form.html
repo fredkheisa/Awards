@@ -1,17 +1,6 @@
-
-{%extends "registration/base.html"%} 
-{% load bootstrap3 %}
-{% load static %}
-
-{% block styles%}
-{{block.super}}
+ {%extends "registration/base.html"%} {% load bootstrap3 %} {% load static %} {% block styles%} {{block.super}}
 <link rel="stylesheet" href="{% static 'css/form.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet"> 
-
-{% endblock %}
-
-
-{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Skranji" rel="stylesheet"> {% endblock %} {% block content %}
 
 <div class="container">
   <div class="row">
@@ -19,7 +8,7 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       {% if form.errors %}
-        <p> Some Information Might be Incorrect </p>
+      <p> Some Information Might be Incorrect </p>
       {% endif %}
       <div class="panel panel-default">
 
@@ -28,13 +17,12 @@
         </div>
         <div class="panel-body">
 
-          <form  action="/accounts/register/" method="post">
-            {% csrf_token %}
-            {% bootstrap_form form %}
+          <form action="/accounts/register/" method="post">
+            {% csrf_token %} {% bootstrap_form form %}
             <div class="form-group">
-            <center>
+
               <input type="submit" class="btn btn-info btn-md" value="Sign Up">
-              </center>
+
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
