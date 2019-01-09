@@ -20,7 +20,7 @@ def index(request):
     return render(request, 'index.html', locals())
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def new_project(request):
     """
     Function that enables one to upload projects
@@ -40,7 +40,7 @@ def new_project(request):
     return render(request, 'new_pro.html', {"form": form})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def edit_profile(request):
     """
     Function that enables one to edit their profile information
@@ -59,7 +59,7 @@ def edit_profile(request):
     return render(request, 'profile/edit-profile.html', {"form": form,})
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def view_project(request, id):
     """
     Function that enables one to view specific project
@@ -70,7 +70,7 @@ def view_project(request, id):
     return render(request, 'view_project.html', locals())
 
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def profile(request, user_id):
     """
     Function that enables one to see their profile
@@ -124,7 +124,7 @@ class ProjectList(APIView):
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
     
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def add_design(request, id):
    project = get_object_or_404(Project, pk=id)
    if request.method == 'POST':
@@ -141,7 +141,7 @@ def add_design(request, id):
 
    return render(request, 'index.html',{'form': form})
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def add_usability(request, id):
    project = get_object_or_404(Project, pk=id)
    if request.method == 'POST':
@@ -159,7 +159,7 @@ def add_usability(request, id):
 
    return render(request, 'index.html',{'form': form})
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def add_content(request, id):
    project = get_object_or_404(Project, pk=id)
    if request.method == 'POST':
